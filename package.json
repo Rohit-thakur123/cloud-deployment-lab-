@@ -1,0 +1,16 @@
+{
+  "name": "cloud-deployment-lab",
+  "version": "1.0.0",
+  "description": "A small Express and EJS application for a Docker and AWS EC2 deployment lab.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.3.0"
+  }
+}

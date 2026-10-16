@@ -1,0 +1,136 @@
+:root {
+  color-scheme: dark;
+  --ink: #f3f6fb;
+  --muted: #9aa8ba;
+  --quiet: #74839a;
+  --line: rgba(164, 184, 211, 0.14);
+  --blue: #63a8ff;
+  --cyan: #56d7e8;
+  --green: #65d99b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: #0e1623;
+  background-image: linear-gradient(rgba(95, 133, 180, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(95, 133, 180, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  color: var(--ink);
+  font-family: 'Segoe UI', 'Trebuchet MS', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(ellipse at 14% 6%, rgba(25, 97, 156, 0.15), transparent 35%), radial-gradient(ellipse at 92% 42%, rgba(92, 60, 148, 0.12), transparent 34%);
+  content: '';
+  pointer-events: none;
+}
+
+a { color: inherit; text-decoration: none; }
+.page-shell { width: min(1080px, calc(100% - 64px)); margin: 0 auto; }
+.topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 11px; font: 600 19px 'Trebuchet MS', sans-serif; }
+.brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(99, 168, 255, 0.32); border-radius: 10px; background: rgba(54, 117, 190, 0.13); color: var(--blue); }
+.brand-mark svg { width: 25px; height: 25px; }
+.brand-light { color: #9eb0c7; font-weight: 400; }
+.topbar-meta, .footer-status { display: flex; align-items: center; gap: 9px; color: #bdc8d6; font-size: 12px; font-weight: 500; }
+.online-dot { width: 8px; height: 8px; flex: 0 0 auto; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(101, 217, 155, 0.1); }
+
+.hero { min-height: 335px; display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 50px 0 44px; }
+.hero-copy { max-width: 650px; }
+.eyebrow, .section-kicker { margin: 0; color: #91a5bc; font-size: 10px; font-weight: 700; letter-spacing: 1.45px; }
+.eyebrow { display: flex; align-items: center; gap: 10px; color: var(--cyan); }
+.eyebrow-rule { width: 22px; height: 1px; background: var(--cyan); }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin: 19px 0 16px; font: 600 58px/1.08 'Trebuchet MS', sans-serif; }
+h1 span { color: #82aef6; }
+.hero-description { max-width: 480px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
+.deployment-stamp { width: 170px; min-height: 190px; flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(145deg, rgba(25, 39, 57, 0.88), rgba(18, 27, 42, 0.8)); }
+.stamp-ring { width: 53px; height: 53px; display: grid; place-items: center; margin-bottom: 14px; border: 1px solid rgba(101, 217, 155, 0.32); border-radius: 50%; background: rgba(101, 217, 155, 0.09); color: var(--green); }
+.stamp-ring svg { width: 30px; height: 30px; }
+.stamp-label { color: var(--quiet); font-size: 9px; font-weight: 700; letter-spacing: 1.35px; }
+.deployment-stamp strong { margin-top: 4px; color: var(--green); font: 600 19px 'Trebuchet MS', sans-serif; }
+.stamp-caption { margin-top: 5px; color: #8190a4; font-size: 10px; }
+
+.welcome-panel { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 310px; align-items: stretch; overflow: hidden; border: 1px solid rgba(110, 152, 205, 0.22); border-radius: 10px; background: linear-gradient(112deg, rgba(24, 39, 58, 0.97), rgba(20, 30, 47, 0.94)); }
+.welcome-accent { position: absolute; inset: 0 auto 0 0; width: 3px; background: linear-gradient(180deg, var(--cyan), #8182e9); }
+.welcome-main { padding: 28px 34px 30px; }
+.section-kicker { color: #8ca1b9; }
+.welcome-main h2 { margin: 10px 0 8px; font: 600 24px/1.3 'Trebuchet MS', sans-serif; }
+.welcome-copy { max-width: 520px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.details { display: flex; flex-direction: column; justify-content: center; gap: 17px; padding: 20px 28px; border-left: 1px solid var(--line); }
+.detail-item { display: flex; flex-direction: column; gap: 6px; }
+.detail-label { color: var(--quiet); font-size: 9px; font-weight: 700; letter-spacing: 1.2px; }
+.detail-item strong { color: #e5ecf5; font: 500 14px 'Trebuchet MS', sans-serif; }
+.version-value { display: inline-flex; align-items: center; gap: 8px; }
+.version-dot { width: 6px; height: 6px; border-radius: 50%; background: #a28cf5; }
+.detail-divider { width: 100%; height: 1px; background: var(--line); }
+
+.stack-section { padding: 48px 0 47px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 18px; }
+.section-heading h2 { margin: 6px 0 0; font: 600 21px 'Trebuchet MS', sans-serif; }
+.stack-count { color: #d6deea; font: 600 12px 'Trebuchet MS', sans-serif; }
+.stack-count span { margin-left: 4px; color: var(--quiet); font: 600 9px 'Segoe UI', sans-serif; letter-spacing: 1px; }
+.stack-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.stack-item { min-height: 98px; display: flex; align-items: center; gap: 14px; padding: 17px 18px; border: 1px solid var(--line); border-radius: 8px; background: rgba(21, 31, 48, 0.78); transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease; }
+.stack-item:hover { transform: translateY(-2px); border-color: rgba(99, 168, 255, 0.38); background: rgba(25, 38, 58, 0.92); }
+.stack-icon { width: 42px; height: 42px; flex: 0 0 auto; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9px; background: rgba(255, 255, 255, 0.025); }
+.stack-icon svg { width: 22px; height: 22px; }
+.github-icon { color: #e1e8f2; }
+.docker-icon { color: #64b8fa; }
+.aws-icon { color: #f5b65f; }
+.stack-copy { min-width: 0; }
+.stack-copy h3 { margin: 0 0 4px; font: 600 14px 'Trebuchet MS', sans-serif; }
+.stack-copy p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
+.stack-step { align-self: flex-start; margin-left: auto; color: #687990; font: 600 9px 'Trebuchet MS', sans-serif; }
+
+.footer { min-height: 63px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); color: #8a98ab; font-size: 11px; }
+.footer-separator { padding: 0 6px; color: #52637b; }
+.footer-status { color: #93a2b6; font-size: 10px; }
+.footer-status .online-dot { width: 6px; height: 6px; }
+
+@media (max-width: 760px) {
+  .page-shell { width: min(100% - 40px, 560px); }
+  .topbar { height: 70px; }
+  .hero { min-height: 0; padding: 48px 0 36px; }
+  h1 { font-size: 47px; }
+  .deployment-stamp { width: 142px; min-height: 165px; }
+  .welcome-panel { grid-template-columns: 1fr; }
+  .details { flex-direction: row; align-items: center; justify-content: flex-start; gap: 22px; padding: 18px 30px; border-top: 1px solid var(--line); border-left: 0; }
+  .detail-divider { width: 1px; height: 34px; }
+  .stack-grid { grid-template-columns: 1fr; gap: 10px; }
+  .stack-item { min-height: 82px; }
+  .stack-section { padding: 38px 0; }
+}
+
+@media (max-width: 480px) {
+  .page-shell { width: calc(100% - 32px); }
+  .brand { font-size: 17px; }
+  .topbar-meta { gap: 7px; font-size: 10px; }
+  .online-dot { width: 7px; height: 7px; }
+  .hero { align-items: flex-start; gap: 19px; padding: 39px 0 30px; }
+  h1 { margin-top: 16px; font-size: 38px; }
+  .hero-description { font-size: 12px; line-height: 1.65; }
+  .deployment-stamp { width: 94px; min-height: 125px; margin-top: 20px; border-radius: 9px; }
+  .stamp-ring { width: 38px; height: 38px; margin-bottom: 9px; }
+  .stamp-ring svg { width: 23px; height: 23px; }
+  .stamp-label { font-size: 7px; letter-spacing: 0.8px; }
+  .deployment-stamp strong { font-size: 15px; }
+  .stamp-caption { max-width: 76px; font-size: 8px; text-align: center; }
+  .welcome-main { padding: 23px 21px 21px; }
+  .welcome-main h2 { font-size: 20px; }
+  .welcome-copy { font-size: 12px; }
+  .details { gap: 14px; padding: 16px 21px; }
+  .detail-item strong { font-size: 12px; }
+  .section-heading h2 { font-size: 19px; }
+  .footer { align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; padding: 14px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
